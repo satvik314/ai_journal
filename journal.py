@@ -1,11 +1,14 @@
 import streamlit as st
 import datetime
 from utils import *
+from mood_board import create_moodboard
+from chat_ui import chat_interface
+
 st.title("📖 Journal X")
-st.write("👼🏻 Be your own therapist")
+st.write("👼🏻 Convert your daily journal into a therapist!")
 
 
-tab1, tab2, tab3 = st.tabs(["Log your feelings", "Mood board", "Chat with yourself!"])
+tab1, tab2, tab3 = st.tabs(["Log your feelings", "Mood board", "Chat with your journal!"])
 
 
 with tab1:
@@ -30,7 +33,11 @@ with tab1:
         st.success("Journal entry submitted successfully!") 
 
 with tab2:
-    st.write("Mood board coming soon!")
+    st.write("Mood board")
+    create_moodboard()
+
 
 with tab3:
-    st.write("Chatbot coming soon!")
+    st.write("Journal X Chatbot")
+    chat_interface()
+
